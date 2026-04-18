@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>School Science Projects — Synaptic Labs</title>
+<meta name="description" content="Synaptic Labs builds Class 6–12 science fair models, working demos, physics & chemistry experiments. Home delivered, fully assembled."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#050608;--dark:#0a0c10;--card:#0f1118;--card2:#13161f;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--gold:#c9a84c;--gold2:#e8cc7a;--gold-dim:rgba(201,168,76,0.12);--text:#f0ede8;--muted:#6b6e7a;--muted2:#9a9ba6;--white:#ffffff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 64px;background:rgba(5,6,8,0.95);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:65px;width:auto;}
+.nav-back{display:flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;transition:opacity 0.2s;}
+.nav-back:hover{opacity:0.7;}
+.nav-back svg{width:16px;height:16px;}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--gold);color:var(--black);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 64px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold-dim);background:var(--gold-dim);padding:6px 16px;border-radius:0;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.hero-num{font-size:0.65rem;opacity:0.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:var(--muted2);max-width:520px;line-height:1.7;margin-bottom:48px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--black);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gold2);}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-tag{position:absolute;right:64px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:0.7rem;letter-spacing:0.25em;color:var(--muted);text-transform:uppercase;}
+
+/* SECTION */
+.section{padding:100px 64px;}
+.wrap{max-width:1100px;margin:0 auto;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);opacity:0.5;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{color:var(--muted2);max-width:560px;line-height:1.7;margin-bottom:56px;font-size:1rem;}
+.divider{height:1px;background:var(--border);margin:0 64px;}
+
+/* WHAT WE BUILD */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.project-card{background:var(--card);padding:36px 28px;border:1px solid var(--border);transition:all 0.25s;cursor:default;}
+.project-card:hover{border-color:var(--gold-dim);background:var(--card2);}
+.project-icon{font-size:1.8rem;margin-bottom:16px;}
+.project-card h3{font-size:1rem;font-weight:500;margin-bottom:10px;color:var(--white);}
+.project-card p{font-size:0.85rem;color:var(--muted2);line-height:1.6;}
+.project-examples{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
+.example-tag{font-size:0.68rem;padding:3px 10px;border:1px solid var(--border2);color:var(--muted2);letter-spacing:0.05em;}
+
+/* TIERS */
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.tier-card{background:var(--card);padding:40px 32px;border:1px solid var(--border);position:relative;}
+.tier-card.featured{border-color:var(--gold);background:var(--card2);}
+.tier-badge{position:absolute;top:-12px;left:32px;background:var(--gold);color:var(--black);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;padding:4px 12px;text-transform:uppercase;}
+.tier-label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tier-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:6px;color:var(--white);}
+.tier-price{font-size:1.4rem;font-weight:600;color:var(--gold);margin-bottom:20px;}
+.tier-price span{font-size:0.8rem;font-weight:400;color:var(--muted2);}
+.tier-desc{font-size:0.85rem;color:var(--muted2);line-height:1.65;margin-bottom:24px;}
+.tier-features{list-style:none;}
+.tier-features li{font-size:0.82rem;color:var(--muted2);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.tier-features li::before{content:'✦';color:var(--gold);font-size:0.6rem;margin-top:3px;flex-shrink:0;}
+
+/* PROCESS */
+.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.process-card{background:var(--card);padding:32px 24px;border:1px solid var(--border);text-align:center;}
+.process-card-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:0.3;font-weight:300;margin-bottom:12px;}
+.process-card h4{font-size:0.95rem;font-weight:500;color:var(--white);margin-bottom:8px;}
+.process-card p{font-size:0.8rem;color:var(--muted2);line-height:1.5;}
+
+/* FAQ */
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:var(--card);border:1px solid var(--border);overflow:hidden;}
+.faq-q{padding:24px 28px;font-size:0.95rem;font-weight:500;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color 0.2s;}
+.faq-q:hover{color:var(--gold);}
+.faq-q .faq-icon{font-size:1.2rem;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+.faq-a{padding:0 28px 24px;font-size:0.88rem;color:var(--muted2);line-height:1.7;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--dark);border-top:1px solid var(--border);padding:80px 64px;text-align:center;}
+.contact-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;margin-bottom:16px;}
+.contact-strip h2 em{font-style:italic;color:var(--gold);}
+.contact-strip p{color:var(--muted2);margin-bottom:48px;font-size:1rem;}
+.support-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+.support-card{display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);padding:28px 32px;min-width:180px;text-decoration:none;color:var(--text);transition:all 0.25s;}
+.support-card:hover{border-color:var(--gold);color:var(--gold);}
+.support-card svg{width:28px;height:28px;}
+.support-card span{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;}
+footer p{font-size:0.72rem;color:var(--muted);}
+
+@media(max-width:900px){
+  nav{padding:18px 24px;}
+  .hero{padding:120px 24px 80px;}
+  .hero-tag{display:none;}
+  .section{padding:72px 24px;}
+  .divider{margin:0 24px;}
+  .projects-grid,.tiers-grid,.process-strip{grid-template-columns:1fr;}
+  footer{padding:32px 24px;flex-direction:column;text-align:center;}
+  .contact-strip{padding:60px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Synaptic Labs"></a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+  <a href="https://wa.me/917358902554" class="nav-cta">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge"><span class="hero-num">01</span> Domain · School</div>
+    <h1>School Science<br><em>Projects & Models</em></h1>
+    <p class="hero-sub">We build Class 6–12 science fair models, working demonstrations, physics & chemistry experiments — fully assembled and home delivered before your deadline.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/917358902554" class="btn-gold">Order a School Project</a>
+      <a href="#what-we-build" class="btn-outline">See What We Build</a>
+    </div>
+  </div>
+  <span class="hero-tag">School · Class 6–12</span>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT WE BUILD -->
+<section class="section" id="what-we-build">
+  <div class="wrap">
+    <div class="section-eyebrow">What We Build</div>
+    <h2 class="section-title">Every subject.<br><em>Every class level.</em></h2>
+    <p class="section-sub">From simple Class 6 models to advanced Class 12 electronics — we build it all, fully tested and ready to present.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">⚡</div>
+        <h3>Physics Models</h3>
+        <p>Working models that demonstrate real physics concepts — from simple machines to optics and electromagnetism.</p>
+        <div class="project-examples">
+          <span class="example-tag">Archimedes Principle</span>
+          <span class="example-tag">Periscope</span>
+          <span class="example-tag">DC Motor</span>
+          <span class="example-tag">Electromagnet</span>
+          <span class="example-tag">Water Turbine</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🧪</div>
+        <h3>Chemistry Experiments</h3>
+        <p>Safe, visual chemistry demonstrations with proper setups, labeling and display boards.</p>
+        <div class="project-examples">
+          <span class="example-tag">Crystal Growing</span>
+          <span class="example-tag">pH Indicator</span>
+          <span class="example-tag">Electrolysis</span>
+          <span class="example-tag">Fire Reaction</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🌱</div>
+        <h3>Biology Projects</h3>
+        <p>Educational models, diagrams and demonstrations about life science — anatomy, ecosystems and more.</p>
+        <div class="project-examples">
+          <span class="example-tag">Heart Model</span>
+          <span class="example-tag">DNA Structure</span>
+          <span class="example-tag">Ecosystem Box</span>
+          <span class="example-tag">Plant Cell</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🔋</div>
+        <h3>Electronics Circuits</h3>
+        <p>Simple to intermediate electronic circuits for Class 10–12 — working, soldered and housed in project boxes.</p>
+        <div class="project-examples">
+          <span class="example-tag">LED Dimmer</span>
+          <span class="example-tag">Alarm Circuit</span>
+          <span class="example-tag">Touch Sensor</span>
+          <span class="example-tag">Solar Charger</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🌍</div>
+        <h3>Geography & EVS</h3>
+        <p>Working and display models of geographic and environmental science concepts.</p>
+        <div class="project-examples">
+          <span class="example-tag">Volcano</span>
+          <span class="example-tag">Weather Station</span>
+          <span class="example-tag">Solar System</span>
+          <span class="example-tag">Wind Energy</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🏆</div>
+        <h3>Science Fair Winners</h3>
+        <p>High-impact projects designed specifically to stand out and win at school-level science exhibitions.</p>
+        <div class="project-examples">
+          <span class="example-tag">Smart Home Mini</span>
+          <span class="example-tag">Earthquake Alarm</span>
+          <span class="example-tag">Water Purifier</span>
+          <span class="example-tag">Voice Controlled</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIERS -->
+<section class="section" style="background:var(--dark);" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing Tiers</div>
+    <h2 class="section-title">Transparent pricing.<br><em>No surprises.</em></h2>
+    <p class="section-sub">Every school project is priced based on complexity. Simple 3-tier system, no hidden costs.</p>
+
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-label">Easy</div>
+        <div class="tier-name">Basic Model</div>
+        <div class="tier-price">₹500 – ₹1,500 <span>/ project</span></div>
+        <div class="tier-desc">Simple working models, display projects, non-electronic. Class 6–8 level.</div>
+        <ul class="tier-features">
+          <li>Basic material construction</li>
+          <li>Clear labeling & display board</li>
+          <li>Fully assembled & tested</li>
+          <li>Delivered to your home</li>
+          <li>2–4 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Popular</div>
+        <div class="tier-label">Medium</div>
+        <div class="tier-name">Working Demo</div>
+        <div class="tier-price">₹1,500 – ₹5,000 <span>/ project</span></div>
+        <div class="tier-desc">Electronic circuits, moving models, interactive demos. Class 9–11 level.</div>
+        <ul class="tier-features">
+          <li>Electronics + construction</li>
+          <li>Soldered & housed PCB</li>
+          <li>Working demonstration</li>
+          <li>Display board included</li>
+          <li>Explanation card included</li>
+          <li>3–6 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Hard</div>
+        <div class="tier-name">Advanced Project</div>
+        <div class="tier-price">₹5,000 – ₹12,000 <span>/ project</span></div>
+        <div class="tier-desc">Smart, sensor-based, or Arduino-powered projects. Class 11–12 / Science fair winners.</div>
+        <ul class="tier-features">
+          <li>Microcontroller / Arduino</li>
+          <li>Multiple sensors & outputs</li>
+          <li>Custom enclosure</li>
+          <li>Full project report</li>
+          <li>Presentation prep support</li>
+          <li>5–10 day delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">Order in <em>4 simple steps</em></h2>
+    <p class="section-sub">Zero stress. You just share your idea — we handle everything from design to delivery.</p>
+
+    <div class="process-strip">
+      <div class="process-card">
+        <div class="process-card-num">01</div>
+        <h4>WhatsApp Us</h4>
+        <p>Tell us your class, subject and project idea (or just your budget). Fast reply guaranteed.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card-num">02</div>
+        <h4>Get a Quote</h4>
+        <p>We share the project plan and price within an hour. No commitment until you confirm.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card-num">03</div>
+        <h4>We Build It</h4>
+        <p>Our team builds, assembles and tests your project completely. You do nothing.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card-num">04</div>
+        <h4>We Deliver</h4>
+        <p>Project is shipped directly to your home. Walk into school and impress everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--dark);">
+  <div class="wrap">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-title">Frequently asked<br><em>by school students</em></h2>
+    <p class="section-sub">Everything you need to know before ordering.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this only for Class 12 or all classes? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We work with students from Class 6 all the way to Class 12. We also do tuition center and school exhibition projects. Just tell us your class and requirement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will my teacher know someone else built it? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We build the model but you understand how it works. We always include an explanation card so you can explain the project yourself. Teachers will be impressed by how well you know it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much time do you need? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Simple models take 2–3 days. Electronic projects take 4–7 days. For urgent orders, WhatsApp us and we'll try our best to meet your deadline.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if the project stops working? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We guarantee every project before delivery. If anything stops working within the delivery guarantee period, we fix or replace it — free of charge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I see samples or ideas first? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes! WhatsApp us and we'll share samples, photos of past projects, and suggest the best project for your subject and budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-strip">
+  <h2>Ready to <em>order your project?</em></h2>
+  <p>One message away. We respond fast — usually within 30 minutes.</p>
+  <div class="support-grid">
+    <a href="https://wa.me/917358902554" class="support-card">
+      <svg viewBox="0 0 24 24" fill="#c9a84c"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="mailto:synapticlabs.in@gmail.com" class="support-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span>Email Us</span>
+    </a>
+    <a href="https://instagram.com/synapticlabs.in" class="support-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c"/></svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+  <a href="https://wa.me/917358902554" class="btn-gold">Start Your School Project →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">SynapticLabs</div>
+  <p>© 2026 Synaptic Labs. All rights reserved.</p>
+  <a href="index.html" style="color:var(--gold);font-size:0.8rem;text-decoration:none;">← Back to Home</a>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

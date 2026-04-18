@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Medical & Research Projects — Synaptic Labs</title>
+<meta name="description" content="Synaptic Labs builds biomedical device prototypes, biotech instruments and research-grade systems for medical students and researchers. Home delivered."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#050608;--dark:#0a0c10;--card:#0f1118;--card2:#13161f;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--gold:#c9a84c;--gold2:#e8cc7a;--gold-dim:rgba(201,168,76,0.12);--text:#f0ede8;--muted:#6b6e7a;--muted2:#9a9ba6;--white:#ffffff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 64px;background:rgba(5,6,8,0.95);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}.nav-logo img{height:65px;width:auto;}
+.nav-back{display:flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-size:0.85rem;font-weight:500;transition:opacity 0.2s;}.nav-back:hover{opacity:0.7;}.nav-back svg{width:16px;height:16px;}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.nav-cta:hover{background:var(--gold);color:var(--black);}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 64px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-100px;right:0;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold-dim);background:var(--gold-dim);padding:6px 16px;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.hero-num{font-size:0.65rem;opacity:0.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:var(--muted2);max-width:560px;line-height:1.7;margin-bottom:48px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--black);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.btn-gold:hover{background:var(--gold2);}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-tag{position:absolute;right:64px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:0.7rem;letter-spacing:0.25em;color:var(--muted);text-transform:uppercase;}
+.section{padding:100px 64px;}.wrap{max-width:1100px;margin:0 auto;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);opacity:0.5;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:16px;}.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{color:var(--muted2);max-width:560px;line-height:1.7;margin-bottom:56px;font-size:1rem;}
+.divider{height:1px;background:var(--border);margin:0 64px;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.project-card{background:var(--card);padding:36px 28px;border:1px solid var(--border);transition:all 0.25s;}.project-card:hover{border-color:var(--gold-dim);background:var(--card2);}
+.project-icon{font-size:1.8rem;margin-bottom:16px;}
+.project-card h3{font-size:1rem;font-weight:500;margin-bottom:10px;color:var(--white);}
+.project-card p{font-size:0.85rem;color:var(--muted2);line-height:1.6;}
+.project-examples{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
+.example-tag{font-size:0.68rem;padding:3px 10px;border:1px solid var(--border2);color:var(--muted2);letter-spacing:0.05em;}
+.trust-banner{background:var(--gold-dim);border:1px solid var(--gold);padding:28px 36px;margin-top:48px;display:flex;gap:20px;align-items:flex-start;}
+.trust-icon{font-size:1.8rem;flex-shrink:0;}
+.trust-banner h4{font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:6px;}
+.trust-banner p{font-size:0.85rem;color:var(--muted2);line-height:1.6;}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.tier-card{background:var(--card);padding:40px 32px;border:1px solid var(--border);position:relative;}.tier-card.featured{border-color:var(--gold);background:var(--card2);}
+.tier-badge{position:absolute;top:-12px;left:32px;background:var(--gold);color:var(--black);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;padding:4px 12px;text-transform:uppercase;}
+.tier-label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tier-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:6px;color:var(--white);}
+.tier-price{font-size:1.4rem;font-weight:600;color:var(--gold);margin-bottom:20px;}.tier-price span{font-size:0.8rem;font-weight:400;color:var(--muted2);}
+.tier-desc{font-size:0.85rem;color:var(--muted2);line-height:1.65;margin-bottom:24px;}
+.tier-features{list-style:none;}.tier-features li{font-size:0.82rem;color:var(--muted2);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}.tier-features li::before{content:'✦';color:var(--gold);font-size:0.6rem;margin-top:3px;flex-shrink:0;}
+.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.process-card{background:var(--card);padding:32px 24px;border:1px solid var(--border);text-align:center;}
+.process-card-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:0.3;font-weight:300;margin-bottom:12px;}
+.process-card h4{font-size:0.95rem;font-weight:500;color:var(--white);margin-bottom:8px;}
+.process-card p{font-size:0.8rem;color:var(--muted2);line-height:1.5;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:var(--card);border:1px solid var(--border);}
+.faq-q{padding:24px 28px;font-size:0.95rem;font-weight:500;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color 0.2s;}.faq-q:hover{color:var(--gold);}
+.faq-q .faq-icon{font-size:1.2rem;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+.faq-a{padding:0 28px 24px;font-size:0.88rem;color:var(--muted2);line-height:1.7;display:none;}
+.faq-item.open .faq-a{display:block;}.faq-item.open .faq-icon{transform:rotate(45deg);}
+.contact-strip{background:var(--dark);border-top:1px solid var(--border);padding:80px 64px;text-align:center;}
+.contact-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;margin-bottom:16px;}.contact-strip h2 em{font-style:italic;color:var(--gold);}
+.contact-strip p{color:var(--muted2);margin-bottom:48px;}
+.support-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+.support-card{display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);padding:28px 32px;min-width:180px;text-decoration:none;color:var(--text);transition:all 0.25s;}.support-card:hover{border-color:var(--gold);color:var(--gold);}
+.support-card svg{width:28px;height:28px;}.support-card span{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;}
+footer{border-top:1px solid var(--border);padding:40px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;}footer p{font-size:0.72rem;color:var(--muted);}
+@media(max-width:900px){nav{padding:18px 24px;}.hero{padding:120px 24px 80px;}.hero-tag{display:none;}.section{padding:72px 24px;}.divider{margin:0 24px;}.projects-grid,.tiers-grid,.process-strip{grid-template-columns:1fr;}footer{padding:32px 24px;flex-direction:column;text-align:center;}.contact-strip{padding:60px 24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Synaptic Labs"></a>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to Home</a>
+  <a href="https://wa.me/917358902554" class="nav-cta">Order Now</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge"><span class="hero-num">04</span> Domain · Medical / Research</div>
+    <h1>Biomedical &<br><em>Research Projects</em></h1>
+    <p class="hero-sub">We build biomedical device prototypes, biotech instruments and full research-grade systems for MBBS, B.Pharmacy, M.Tech and PhD-level students. Precision-built, properly documented, delivered to your door.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/917358902554" class="btn-gold">Discuss Your Project</a>
+      <a href="#what-we-build" class="btn-outline">See What We Build</a>
+    </div>
+  </div>
+  <span class="hero-tag">Medical · Research · Biotech</span>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="what-we-build">
+  <div class="wrap">
+    <div class="section-eyebrow">What We Build</div>
+    <h2 class="section-title">Clinical-grade precision.<br><em>Research-ready systems.</em></h2>
+    <p class="section-sub">From simple patient monitoring devices to advanced biomedical imaging systems — we deliver devices that perform, document and present flawlessly.</p>
+
+    <div class="trust-banner">
+      <div class="trust-icon">🔬</div>
+      <div>
+        <h4>We build for Medical, Pharmacy, Biotech AND Engineering students</h4>
+        <p>Many think we only do school projects or only engineering. We serve MBBS interns, B.Pharmacy students, Biotech researchers, M.Tech students and PhD scholars who need hardware prototypes and working medical devices for their projects and research.</p>
+      </div>
+    </div>
+
+    <div class="projects-grid" style="margin-top:2px;">
+      <div class="project-card">
+        <div class="project-icon">💓</div>
+        <h3>Patient Monitoring</h3>
+        <p>ECG, SpO2, heart rate, temperature and blood pressure monitoring systems with real-time display and data logging.</p>
+        <div class="project-examples"><span class="example-tag">ECG Monitor</span><span class="example-tag">Pulse Oximeter</span><span class="example-tag">BP Logger</span><span class="example-tag">Multi-param Monitor</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🧬</div>
+        <h3>Biotech Instruments</h3>
+        <p>Lab instrument designs for biotech and pharmacy — centrifuges, incubators, electrophoresis setups and chromatography rigs.</p>
+        <div class="project-examples"><span class="example-tag">Mini Centrifuge</span><span class="example-tag">Incubator Control</span><span class="example-tag">pH Meter</span><span class="example-tag">Spectrophotometer</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🦿</div>
+        <h3>Prosthetics & Rehab</h3>
+        <p>Assistive technology, prosthetic limb prototypes, rehabilitation devices and mobility aids with sensor feedback.</p>
+        <div class="project-examples"><span class="example-tag">Myoelectric Arm</span><span class="example-tag">Exoskeleton</span><span class="example-tag">Smart Crutch</span><span class="example-tag">Gait Analyzer</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🔭</div>
+        <h3>Imaging & Diagnostics</h3>
+        <p>Ultrasound, thermal imaging, and vision-based diagnostic systems using camera modules and signal processing.</p>
+        <div class="project-examples"><span class="example-tag">Thermal Camera</span><span class="example-tag">Wound Imaging</span><span class="example-tag">Retinal Scan</span><span class="example-tag">X-Ray Viewer</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">💊</div>
+        <h3>Drug Delivery Systems</h3>
+        <p>Automated and controlled drug delivery mechanisms — infusion pumps, smart pill dispensers and transdermal patches.</p>
+        <div class="project-examples"><span class="example-tag">Infusion Pump</span><span class="example-tag">Pill Dispenser</span><span class="example-tag">Insulin Pen</span><span class="example-tag">Smart IV</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Health AI & Analytics</h3>
+        <p>ML-powered diagnostic tools, disease prediction models, medical image analysis and clinical decision support systems.</p>
+        <div class="project-examples"><span class="example-tag">Tumor Detection</span><span class="example-tag">Diabetic Retinopathy</span><span class="example-tag">Fall Detection</span><span class="example-tag">Stress Monitor</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="background:var(--dark);" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing Tiers</div>
+    <h2 class="section-title">Research-grade systems.<br><em>Fully transparent pricing.</em></h2>
+    <p class="section-sub">Medical and research projects require precision. Pricing reflects complexity, certification requirements and documentation depth.</p>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-label">Easy</div>
+        <div class="tier-name">Prototype Device</div>
+        <div class="tier-price">₹8,000 – ₹20,000 <span>/ project</span></div>
+        <div class="tier-desc">Single-parameter measurement or display device. Basic biomedical sensing with proper calibration.</div>
+        <ul class="tier-features">
+          <li>Sensor + display integration</li><li>PCB or breadboard build</li><li>Calibration and testing</li><li>Project report included</li><li>7–12 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Most Ordered</div>
+        <div class="tier-label">Medium</div>
+        <div class="tier-name">Clinical System</div>
+        <div class="tier-price">₹20,000 – ₹60,000 <span>/ project</span></div>
+        <div class="tier-desc">Multi-parameter systems with data logging, wireless connectivity, alert mechanisms and clinical documentation.</div>
+        <ul class="tier-features">
+          <li>Multi-sensor integration</li><li>Wireless data transmission</li><li>Mobile or web dashboard</li><li>IEEE paper draft</li><li>Clinical validation report</li><li>12–20 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Hard</div>
+        <div class="tier-name">Research System</div>
+        <div class="tier-price">₹60,000 – ₹2,00,000 <span>/ project</span></div>
+        <div class="tier-desc">PhD / M.Tech level. Novel device design with custom analog front-end, AI integration and publication-ready documentation.</div>
+        <ul class="tier-features">
+          <li>Custom analog / digital design</li><li>AI / signal processing</li><li>FDA-reference documentation</li><li>Ethics & protocol checklist</li><li>Publication-ready IEEE paper</li><li>20–45 day delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">Precision from<br><em>day one.</em></h2>
+    <div class="process-strip">
+      <div class="process-card"><div class="process-card-num">01</div><h4>Share Your Brief</h4><p>Tell us your exact research problem, required parameters and target output.</p></div>
+      <div class="process-card"><div class="process-card-num">02</div><h4>Design Review</h4><p>We confirm technical feasibility, component selection and documentation plan.</p></div>
+      <div class="process-card"><div class="process-card-num">03</div><h4>Precision Build</h4><p>Biomedical-grade assembly, calibration, signal conditioning and testing.</p></div>
+      <div class="process-card"><div class="process-card-num">04</div><h4>Ship + Support</h4><p>Delivered with all documentation, validation data and viva/defence prep.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="background:var(--dark);">
+  <div class="wrap">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-title">Medical & research<br><em>student FAQs</em></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">We're MBBS / Pharmacy students — do you build for us? <span class="faq-icon">+</span></div><div class="faq-a">Absolutely. We build for MBBS interns doing their thesis, B.Pharmacy and M.Pharmacy students needing lab instruments, Biotech students needing equipment prototypes, and medical researchers needing custom devices. We understand that's a different requirement from engineering projects.</div></div>
+      <div class="faq-item"><div class="faq-q">Can the device achieve clinical-grade accuracy? <span class="faq-icon">+</span></div><div class="faq-a">For research prototypes, we achieve validated accuracy using calibrated reference instruments. We include a validation report showing measured vs. reference values across test conditions.</div></div>
+      <div class="faq-item"><div class="faq-q">Will you help with ethics committee documentation? <span class="faq-icon">+</span></div><div class="faq-a">Yes — for research-level projects, we help draft the technical sections of ethics submissions including device specifications, safety measures and intended use documentation.</div></div>
+      <div class="faq-item"><div class="faq-q">Can you build a multi-parameter monitor? <span class="faq-icon">+</span></div><div class="faq-a">Yes. We've built systems measuring ECG, SpO2, temperature, respiration rate and blood pressure simultaneously — with wireless transmission and dashboard display. Talk to us about your parameters.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you supply components or do we have to? <span class="faq-icon">+</span></div><div class="faq-a">We handle all component sourcing — medical-grade sensors, enclosures, PCBs and everything else. You only need to give us your requirements and deadline.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-strip">
+  <h2>Ready to <em>build your research device?</em></h2>
+  <p>Tell us your requirement — we'll guide you from concept to completion.</p>
+  <div class="support-grid">
+    <a href="https://wa.me/917358902554" class="support-card"><svg viewBox="0 0 24 24" fill="#c9a84c"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
+    <a href="mailto:synapticlabs.in@gmail.com" class="support-card"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email Us</span></a>
+    <a href="https://instagram.com/synapticlabs.in" class="support-card"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c"/></svg><span>Instagram</span></a>
+  </div>
+  <a href="https://wa.me/917358902554" class="btn-gold">Start Your Medical Project →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">SynapticLabs</div>
+  <p>© 2026 Synaptic Labs. All rights reserved.</p>
+  <a href="index.html" style="color:var(--gold);font-size:0.8rem;text-decoration:none;">← Back to Home</a>
+</footer>
+
+<script>document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});</script>
+</body>
+</html>

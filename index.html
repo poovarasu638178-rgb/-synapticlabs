@@ -382,6 +382,31 @@ nav {
 
 .serve-item:hover::before { transform: scaleX(1); }
 
+.serve-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.serve-arrow {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.serve-link:hover .serve-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .serve-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
@@ -1212,26 +1237,30 @@ footer p {
     <p class="section-sub">Every level, every domain. We build projects that make students walk in with full confidence.</p>
 
     <div class="serve-strip">
-      <div class="serve-item">
+      <a href="domain-school.html" class="serve-item serve-link">
         <span class="serve-num">01</span>
         <h3>School Students</h3>
         <p>Class 6–12 science fair models, working demos, simple circuits and physics experiments.</p>
-      </div>
-      <div class="serve-item">
+        <span class="serve-arrow">Explore →</span>
+      </a>
+      <a href="domain-diploma.html" class="serve-item serve-link">
         <span class="serve-num">02</span>
         <h3>Diploma / Poly</h3>
         <p>Polytechnic final year projects, embedded systems, automation and electronics projects.</p>
-      </div>
-      <div class="serve-item">
+        <span class="serve-arrow">Explore →</span>
+      </a>
+      <a href="domain-engineering.html" class="serve-item serve-link">
         <span class="serve-num">03</span>
         <h3>Engineering</h3>
         <p>BE / B.Tech final year — IoT, ML, robotics, embedded systems and full stack applications.</p>
-      </div>
-      <div class="serve-item">
+        <span class="serve-arrow">Explore →</span>
+      </a>
+      <a href="domain-medical.html" class="serve-item serve-link">
         <span class="serve-num">04</span>
         <h3>Medical / Research</h3>
         <p>Biomedical devices, biotech instruments and research-grade prototype systems.</p>
-      </div>
+        <span class="serve-arrow">Explore →</span>
+      </a>
     </div>
   </div>
 </section>

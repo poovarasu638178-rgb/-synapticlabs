@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Engineering Final Year Projects — Synaptic Labs</title>
+<meta name="description" content="Synaptic Labs builds BE/B.Tech final year projects — IoT, ML, robotics, embedded systems, full stack apps. Home delivered, fully assembled."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#050608;--dark:#0a0c10;--card:#0f1118;--card2:#13161f;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--gold:#c9a84c;--gold2:#e8cc7a;--gold-dim:rgba(201,168,76,0.12);--text:#f0ede8;--muted:#6b6e7a;--muted2:#9a9ba6;--white:#ffffff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 64px;background:rgba(5,6,8,0.95);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}.nav-logo img{height:65px;width:auto;}
+.nav-back{display:flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-size:0.85rem;font-weight:500;transition:opacity 0.2s;}.nav-back:hover{opacity:0.7;}.nav-back svg{width:16px;height:16px;}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.nav-cta:hover{background:var(--gold);color:var(--black);}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 64px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;bottom:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold-dim);background:var(--gold-dim);padding:6px 16px;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.hero-num{font-size:0.65rem;opacity:0.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:var(--muted2);max-width:560px;line-height:1.7;margin-bottom:48px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--black);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.btn-gold:hover{background:var(--gold2);}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text);padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-tag{position:absolute;right:64px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:0.7rem;letter-spacing:0.25em;color:var(--muted);text-transform:uppercase;}
+.section{padding:100px 64px;}.wrap{max-width:1100px;margin:0 auto;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);opacity:0.5;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;margin-bottom:16px;}.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{color:var(--muted2);max-width:560px;line-height:1.7;margin-bottom:56px;font-size:1rem;}
+.divider{height:1px;background:var(--border);margin:0 64px;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.project-card{background:var(--card);padding:36px 28px;border:1px solid var(--border);transition:all 0.25s;}.project-card:hover{border-color:var(--gold-dim);background:var(--card2);}
+.project-icon{font-size:1.8rem;margin-bottom:16px;}
+.project-card h3{font-size:1rem;font-weight:500;margin-bottom:10px;color:var(--white);}
+.project-card p{font-size:0.85rem;color:var(--muted2);line-height:1.6;}
+.project-examples{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
+.example-tag{font-size:0.68rem;padding:3px 10px;border:1px solid var(--border2);color:var(--muted2);letter-spacing:0.05em;}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.tier-card{background:var(--card);padding:40px 32px;border:1px solid var(--border);position:relative;}.tier-card.featured{border-color:var(--gold);background:var(--card2);}
+.tier-badge{position:absolute;top:-12px;left:32px;background:var(--gold);color:var(--black);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;padding:4px 12px;text-transform:uppercase;}
+.tier-label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tier-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:6px;color:var(--white);}
+.tier-price{font-size:1.4rem;font-weight:600;color:var(--gold);margin-bottom:20px;}.tier-price span{font-size:0.8rem;font-weight:400;color:var(--muted2);}
+.tier-desc{font-size:0.85rem;color:var(--muted2);line-height:1.65;margin-bottom:24px;}
+.tier-features{list-style:none;}.tier-features li{font-size:0.82rem;color:var(--muted2);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}.tier-features li::before{content:'✦';color:var(--gold);font-size:0.6rem;margin-top:3px;flex-shrink:0;}
+.domains-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.domain-chip{background:var(--card);border:1px solid var(--border);padding:24px 20px;text-align:center;}
+.domain-chip-icon{font-size:1.6rem;margin-bottom:10px;}
+.domain-chip h4{font-size:0.88rem;font-weight:500;color:var(--white);margin-bottom:6px;}
+.domain-chip p{font-size:0.78rem;color:var(--muted2);}
+.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.process-card{background:var(--card);padding:32px 24px;border:1px solid var(--border);text-align:center;}
+.process-card-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:0.3;font-weight:300;margin-bottom:12px;}
+.process-card h4{font-size:0.95rem;font-weight:500;color:var(--white);margin-bottom:8px;}
+.process-card p{font-size:0.8rem;color:var(--muted2);line-height:1.5;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:var(--card);border:1px solid var(--border);}
+.faq-q{padding:24px 28px;font-size:0.95rem;font-weight:500;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color 0.2s;}.faq-q:hover{color:var(--gold);}
+.faq-q .faq-icon{font-size:1.2rem;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+.faq-a{padding:0 28px 24px;font-size:0.88rem;color:var(--muted2);line-height:1.7;display:none;}
+.faq-item.open .faq-a{display:block;}.faq-item.open .faq-icon{transform:rotate(45deg);}
+.contact-strip{background:var(--dark);border-top:1px solid var(--border);padding:80px 64px;text-align:center;}
+.contact-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;margin-bottom:16px;}.contact-strip h2 em{font-style:italic;color:var(--gold);}
+.contact-strip p{color:var(--muted2);margin-bottom:48px;}
+.support-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+.support-card{display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);padding:28px 32px;min-width:180px;text-decoration:none;color:var(--text);transition:all 0.25s;}.support-card:hover{border-color:var(--gold);color:var(--gold);}
+.support-card svg{width:28px;height:28px;}.support-card span{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;}
+footer{border-top:1px solid var(--border);padding:40px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;}footer p{font-size:0.72rem;color:var(--muted);}
+@media(max-width:900px){nav{padding:18px 24px;}.hero{padding:120px 24px 80px;}.hero-tag{display:none;}.section{padding:72px 24px;}.divider{margin:0 24px;}.projects-grid,.tiers-grid,.process-strip,.domains-strip{grid-template-columns:1fr 1fr;}footer{padding:32px 24px;flex-direction:column;text-align:center;}.contact-strip{padding:60px 24px;}}
+@media(max-width:600px){.projects-grid,.tiers-grid,.process-strip,.domains-strip{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Synaptic Labs"></a>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to Home</a>
+  <a href="https://wa.me/917358902554" class="nav-cta">Order Now</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge"><span class="hero-num">03</span> Domain · Engineering</div>
+    <h1>BE / B.Tech<br><em>Final Year Projects</em></h1>
+    <p class="hero-sub">We build complete engineering final year projects across all streams — IoT, Machine Learning, Robotics, Embedded Systems and Full Stack Development. Fully delivered before your deadline.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/917358902554" class="btn-gold">Order Your FYP</a>
+      <a href="#what-we-build" class="btn-outline">See What We Build</a>
+    </div>
+  </div>
+  <span class="hero-tag">Engineering · BE · B.Tech</span>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="what-we-build">
+  <div class="wrap">
+    <div class="section-eyebrow">What We Build</div>
+    <h2 class="section-title">Every stream.<br><em>Every technology.</em></h2>
+    <p class="section-sub">We cover the full range of engineering domains. If it's a final year project, we've built it or can build it.</p>
+
+    <div class="domains-strip">
+      <div class="domain-chip"><div class="domain-chip-icon">📡</div><h4>IoT Systems</h4><p>Smart home, industrial monitoring, environmental sensing</p></div>
+      <div class="domain-chip"><div class="domain-chip-icon">🤖</div><h4>Machine Learning</h4><p>Computer vision, NLP, predictive analytics, classification</p></div>
+      <div class="domain-chip"><div class="domain-chip-icon">🦾</div><h4>Robotics</h4><p>Autonomous bots, robotic arms, path planning systems</p></div>
+      <div class="domain-chip"><div class="domain-chip-icon">💻</div><h4>Full Stack Dev</h4><p>Web apps, mobile apps, dashboards, real-time systems</p></div>
+    </div>
+
+    <div class="projects-grid" style="margin-top:2px;">
+      <div class="project-card">
+        <div class="project-icon">🌐</div>
+        <h3>IoT & Embedded</h3>
+        <p>Connected devices, smart monitoring systems and embedded control solutions using ESP32, Raspberry Pi and STM32.</p>
+        <div class="project-examples"><span class="example-tag">Smart Agriculture</span><span class="example-tag">Health Monitor</span><span class="example-tag">predictive maintenance</span><span class="example-tag">Energy Audit</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🧠</div>
+        <h3>Machine Learning & AI</h3>
+        <p>Deep learning, computer vision, NLP and data analysis projects with proper model training and implementation.</p>
+        <div class="project-examples"><span class="example-tag">Face Recognition</span><span class="example-tag">Disease Detection</span><span class="example-tag">Gesture Control</span><span class="example-tag">Sentiment Analysis</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <h3>Robotics & Control</h3>
+        <p>Autonomous robots, industrial robot arms, line-following, terrain navigation and swarm robotics.</p>
+        <div class="project-examples"><span class="example-tag">Autonomous Vehicle</span><span class="example-tag">Biped Robot</span><span class="example-tag">Drone Control</span><span class="example-tag">Robotic Arm</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📱</div>
+        <h3>Full Stack Applications</h3>
+        <p>Web and mobile applications with real backend, database, authentication and live dashboards.</p>
+        <div class="project-examples"><span class="example-tag">Hospital System</span><span class="example-tag">E-Commerce</span><span class="example-tag">Logistics App</span><span class="example-tag">Student Portal</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">⚡</div>
+        <h3>Power & VLSI</h3>
+        <p>Power electronics, renewable energy systems, VLSI design simulations using Cadence, LTSpice and MATLAB.</p>
+        <div class="project-examples"><span class="example-tag">Grid Inverter</span><span class="example-tag">EV Charger</span><span class="example-tag">CMOS Design</span><span class="example-tag">FPGA Control</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Data Science & Analytics</h3>
+        <p>End-to-end data science projects with EDA, model building, evaluation and visualizations.</p>
+        <div class="project-examples"><span class="example-tag">Fraud Detection</span><span class="example-tag">Stock Predictor</span><span class="example-tag">Crop Yield</span><span class="example-tag">Churn Analysis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="background:var(--dark);" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow">Pricing Tiers</div>
+    <h2 class="section-title">Transparent pricing.<br><em>Research-grade quality.</em></h2>
+    <p class="section-sub">Engineering projects are priced based on complexity, hardware requirements and documentation depth.</p>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-label">Easy</div>
+        <div class="tier-name">Standard FYP</div>
+        <div class="tier-price">₹5,000 – ₹15,000 <span>/ project</span></div>
+        <div class="tier-desc">Single-domain hardware or software project, moderate complexity. Common topics with clear scope.</div>
+        <ul class="tier-features">
+          <li>Hardware or software build</li><li>Source code included</li><li>Project report (IEEE format)</li><li>Demo video</li><li>7–10 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-label">Medium</div>
+        <div class="tier-name">Advanced FYP</div>
+        <div class="tier-price">₹15,000 – ₹40,000 <span>/ project</span></div>
+        <div class="tier-desc">Multi-domain integration — IoT + ML, hardware + cloud, mobile + embedded. Higher innovation level.</div>
+        <ul class="tier-features">
+          <li>Hardware + software stack</li><li>Cloud or mobile integration</li><li>Full IEEE paper draft</li><li>PPT for presentation</li><li>Viva & review prep</li><li>10–18 day delivery</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Hard</div>
+        <div class="tier-name">Research-Grade</div>
+        <div class="tier-price">₹40,000 – ₹1,20,000 <span>/ project</span></div>
+        <div class="tier-desc">Novel, publishable-quality projects with custom PCBs, trained ML models, or advanced system integration.</div>
+        <ul class="tier-features">
+          <li>Custom hardware design</li><li>Trained AI/ML models</li><li>IEEE publication ready</li><li>Full documentation set</li><li>3 review presentations</li><li>15–30 day delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">From concept to<br><em>submission-ready.</em></h2>
+    <div class="process-strip">
+      <div class="process-card"><div class="process-card-num">01</div><h4>Share Your Topic</h4><p>Send your project title, department, semester and deadline via WhatsApp.</p></div>
+      <div class="process-card"><div class="process-card-num">02</div><h4>Scope & Quote</h4><p>We define the scope, list deliverables, and send you a fixed price.</p></div>
+      <div class="process-card"><div class="process-card-num">03</div><h4>Full Build</h4><p>Hardware, code, ML models, app, documentation — all built by our engineers.</p></div>
+      <div class="process-card"><div class="process-card-num">04</div><h4>Review & Ship</h4><p>You review before we ship. Delivered with report, PPT and viva guide.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" style="background:var(--dark);">
+  <div class="wrap">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-title">Engineering student<br><em>FAQs</em></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Can you help with all 3 review presentations? <span class="faq-icon">+</span></div><div class="faq-a">Yes. We time deliveries to match your review schedule — prototype + PPT for Review 1, working system for Review 2, and full documentation + demo for Review 3.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you help with IEEE paper writing? <span class="faq-icon">+</span></div><div class="faq-a">Yes. For Medium and Hard tier projects, we include an IEEE paper draft that covers abstract, introduction, methodology, results and references. You just need to finalize it with your guide.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I give you my college's project template? <span class="faq-icon">+</span></div><div class="faq-a">Absolutely. Share your college's documentation format and we follow it exactly — fonts, header format, chapter structure and all.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you build hardware + software both? <span class="faq-icon">+</span></div><div class="faq-a">Yes, that's our strength. We build the entire project — from PCB or sensor connections, to firmware, to mobile/web interface to ML pipeline. One team, one delivery.</div></div>
+      <div class="faq-item"><div class="faq-q">Can we get source code and explanation for viva? <span class="faq-icon">+</span></div><div class="faq-a">Yes, always. Every project includes full source code with comments, a viva Q&A guide covering both basic and advanced questions your examiner may ask.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-strip">
+  <h2>Ready to <em>build your FYP?</em></h2>
+  <p>Share your project idea — we respond within 30 minutes.</p>
+  <div class="support-grid">
+    <a href="https://wa.me/917358902554" class="support-card"><svg viewBox="0 0 24 24" fill="#c9a84c"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
+    <a href="mailto:synapticlabs.in@gmail.com" class="support-card"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email Us</span></a>
+    <a href="https://instagram.com/synapticlabs.in" class="support-card"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c"/></svg><span>Instagram</span></a>
+  </div>
+  <a href="https://wa.me/917358902554" class="btn-gold">Order Your Engineering Project →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">SynapticLabs</div>
+  <p>© 2026 Synaptic Labs. All rights reserved.</p>
+  <a href="index.html" style="color:var(--gold);font-size:0.8rem;text-decoration:none;">← Back to Home</a>
+</footer>
+
+<script>document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});</script>
+</body>
+</html>
